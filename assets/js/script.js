@@ -6,7 +6,18 @@ let result = 0
 let currentOperation = ""
 let resultDisplay = document.getElementById('results')
 resultDisplay.innerText = 0
+let operationsLog=[]
 //basic Functions
+//keep log of operations
+function logOfOperations() {
+    let x = `${firstNumber.join("")}${currentOperation}${secondNumber}=${result}`
+    document.getElementById('messageWhenBlank').classList.add("d-none")
+    document.getElementById('operationsLog').innerHTML += `
+            ${x}
+            <br>`
+    
+
+}
 let clear = () => {
     firstNumber = []
     secondNumber = []
@@ -36,36 +47,39 @@ function performOperation(a){
     switch(a){
         
         case "%":
-            result = x/100
-            resultDisplay.innerText = result
+            result = parseFloat(x)/100
+            resultDisplay.innerText = resultnum.toFixed(2)
             break;
         case "1/x":
-            result = 1/x
-            resultDisplay.innerText = result
+            result = 1 / parseFloat(x)
+            resultDisplay.innerText = resultnum.toFixed(2)
+            
             break;
         case "x2":
             result = x*x
-            resultDisplay.innerText = result
+            resultDisplay.innerText = resultnum.toFixed(2)
+            
             break;
         case "root":
             result = Math.sqrt(x)
-            resultDisplay.innerText = result
+            resultDisplay.innerText = resultnum.toFixed(2)
+            
             break;
         case "/":
             result = x/y
-            resultDisplay.innerText = result
+            resultDisplay.innerText = resultnum.toFixed(2)
             break;
         case "x":
             result = x*y
-            resultDisplay.innerText = result
+            resultDisplay.innerText = resultnum.toFixed(2)
             break;
         case "-":
             result = x-y
-            resultDisplay.innerText = result
+            resultDisplay.innerText = resultnum.toFixed(2)
             break;
         case "+":
             result = parseFloat(x) + parseFloat(y)
-            resultDisplay.innerText = result
+            resultDisplay.innerText = resultnum.toFixed(2)
             break;
         case "CE":
             result = 0
@@ -205,7 +219,49 @@ sum.addEventListener('click', () => {
 let equals = document.getElementById('equalsBtn')
 equals.addEventListener('click', ()=>{
     performOperation(currentOperation)
+    logOfOperations()
     resetNumberinputCount()
     clear()
+    firstNumber.push(result)
+})
+let decimal = document.getElementById("decimalBtn")
+decimal.addEventListener('click', () => {
+    let x = "."
+    displayNumbers(x)
+})
+let changeSign = document.getElementById("changeSignBtn")
+changeSign.addEventListener('click', () => {
+    let firstNumberAsInt = firstNumber.join("")
+    let x = parseInt(firstNumberAsInt)*-1
+    if (numberBeingEntered === 1) {
+        firstNumber = [x]
+        console.log(firstNumber)
+        resultDisplay.innerText = firstNumber
+    } else {
+        secondNumber = [x]
+        console.log(secondNumber)
+        resultDisplay.innerText = secondNumber
+    }
+})
+let oneOverX = document.getElementById('oneOverXbtn')
+oneOverX.addEventListener('click', () => {
+    performOperation("1/x")
+    clear()
+    firstNumber.push(resultnum.toFixed(2))
+})
+let xSquared = document.getElementById('xSquaredBtn')
+xSquared.addEventListener('click', () => {
+    performOperation("x2")
+    clear()
+    firstNumber.push(resultnum.toFixed(2))
+})
+let squaredRoot = document.getElementById('squareRootBtn')
+squaredRoot.addEventListener('click', () => {
+    performOperation('root')
+    clear()
+    firstNumber.push(resultnum.toFixed(2))
 })
 
+
+
+// TODO: memory btns 
