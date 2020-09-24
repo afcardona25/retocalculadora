@@ -48,38 +48,38 @@ function performOperation(a){
         
         case "%":
             result = parseFloat(x)/100
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             break;
         case "1/x":
             result = 1 / parseFloat(x)
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             
             break;
         case "x2":
             result = x*x
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             
             break;
         case "root":
             result = Math.sqrt(x)
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             
             break;
         case "/":
             result = x/y
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             break;
         case "x":
             result = x*y
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             break;
         case "-":
             result = x-y
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             break;
         case "+":
             result = parseFloat(x) + parseFloat(y)
-            resultDisplay.innerText = resultnum.toFixed(2)
+            resultDisplay.innerText = result.toFixed(2)
             break;
         case "CE":
             result = 0
