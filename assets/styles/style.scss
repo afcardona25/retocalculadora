@@ -1,0 +1,50 @@
+.memoryBtn{
+    font-size: 9pt;
+    font-weight: bold ;
+    color: rgb(255, 255, 255);
+}
+.disabledbtn{
+    color: rgb(151, 146, 146);
+}
+.operationsBtns{
+    background-color: rgb(80, 79, 79) ;
+
+}
+
+.calcullatorBtns{
+    height: 80px;
+    font-size: 20px;
+    font-weight: 100;
+    
+}
+.darkestBtn{
+    background-color: black;
+    font-weight: 300;
+
+}
+#display{
+    padding-top: 90px;
+}
+.darkBackground{
+    background-color: rgb(58, 57, 57);
+}
+.darkBtn{
+    background-color: rgb(58, 57, 57);
+    border: none;
+}
+.darkBorder{
+    border:  rgb(58, 57, 57) 1px solid;
+}
+.darkerBtn{
+    background-color: rgb(37, 36, 36) ;
+    font-size: 30px;
+}
+.lighterBtn{
+    background-color: rgb(90, 89, 89);
+    font-size: 40px;
+    font-weight: 400;
+}
+.results{
+    font-size: 60pt;
+    font-weight: lighter;
+}

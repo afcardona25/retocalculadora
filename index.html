@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/styles/style.css">
+    <!--BOOTSTRAP-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Reto Carculadora</title>
+</head>
+<body class="darkBackground">
+    <section id="display" class="d-flex container">
+        <main class="col-10 col-md-9 border border-dark">
+            <h6 class="results text-right text-light" id="results"></h6>
+            <div class="container">
+                <div class="row">
+                    <button class="col-sm memoryBtn darkBtn calcullatorBtns disabledbtn" id="mc">MC</button>
+                    <button class="col-sm memoryBtn darkBtn calcullatorBtns disabledbtn" id="mr">MR</button>
+                    <button class="col-sm memoryBtn darkBtn calcullatorBtns" id="mPlus">M+</button>
+                    <button class="col-sm memoryBtn darkBtn calcullatorBtns" id="mMinus">M-</button>
+                    <button class="col-sm memoryBtn darkBtn calcullatorBtns" id="mS">MS</button>
+                </div>
+                <div class="row">
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="percentageBtn">%</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="cEbtn">CE</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="cBtn">C</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="deleteBtn">⌫</button>
+                </div>
+                <div class="row">
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="oneOverXbtn">1/x</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="xSquaredBtn">x<sup>2</sup></button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="squareRootBtn"><sup>2</sup><span>&#8730;</span>x</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="divisionBtn"><span>&#247;</span></button>
+                </div>
+                <div class="row">
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="sevenBtn">7</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="eightBtn">8</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="nineBtn">9</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="multiplicationBtn"><span>&#215;</span></button>
+                </div>
+                <div class="row">
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="fourBtn">4</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="fiveBtn">5</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="sixBtn">6</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="substractionBtn"><span>&#8722;</span></button>
+                </div>
+                <div class="row">
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="oneBtn">1</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="twoBtn">2</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="threeBtn">3</button>
+                    <button class="col-sm operationsBtns darkBorder darkerBtn text-light calcullatorBtns" id="additionBtn"><span>&#43;</span></button>
+                </div>
+                <div class="row">
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="changeSignBtn"><sup>&#43;</sup>/<sub><span>&#8722;</span></sub></button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="zeroBtn">0</button>
+                    <button class="col-sm numbersBtns darkBorder text-light darkestBtn calcullatorBtns" id="decimalBtn">.</button>
+                    <button class="col-sm equalsBtn darkBorder lighterBtn text-light calcullatorBtns" id="equalsBtn"><span>&#61;</span></button>
+                </div>
+            </div>
+        </main>
+        <aside class="d-none d-md-block col-md-1 col-lg-2 container">
+            <h1 class="h1 text-light row d-flex justify-content-end">Historial</h1>
+            <div class="row d-flex justify-content-end">
+                
+                <div class="text-light" id="operationsLog">
+                    <p class="text-light font-weight-light" id="messageWhenBlank">Aún no hay</p>
+                </div>
+            </div>
+        </aside>
+    </section>
+    <!--SCRIPTS-->
+    <script src="./assets/js/script.js"></script>
+    <!--BOOTSTRAP SCRIPTS AND JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    
+    <!--Sweetalert-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>
